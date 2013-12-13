@@ -1,11 +1,11 @@
 {
-  "name": "lineman-angular-template",
+  "name": "battleship-frontend",
   "title": "An HTML/JS/CSS app using Angular.JS",
   "version": "0.0.1",
   "private": true,
   "author": {
-    "name": "David Mosher",
-    "company": "DAVEMO Consulting"
+    "name": "Zach Briggs",
+    "company": "Test Double"
   },
   "dependencies": {
     "protractor": ">=0.8.0",
