@@ -8,7 +8,16 @@
     <div class="row">
       <div class="large-12">
         <h1>Battleship</h1>
-        <div id="view" ng-view></div>
+        <div class="row">
+          <div class="large-8">
+          </div>
+          <div class="large-4">
+            <input id="nickname-field" ng-model="nickname" placeholder="Nickname"/><br />
+            <strong>You: </strong><nickname>{{ nickname }}</nickname><br />
+            <strong>Opponent: </strong>
+            <opponent>{{ opponent }}</opponent>
+          </div>
+        </div>
       </div>
     </div>
 
