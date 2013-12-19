@@ -22,7 +22,15 @@ describe("Battleship page", function () {
     })
   });
 
-  describe("setup phase" function () {
+  describe("setup phase", function () {
+
+    xit("lets us know we're in setup.", function () {
+      var phase = $('phase');
+      phase.getText().
+        then(function (textFromPhase) {
+        expect(textFromPhase).toBe("Setup");
+      });
+    });
 
     xit("lets us place ships during setup.", function () {
       var cruiser = $('cruiser');

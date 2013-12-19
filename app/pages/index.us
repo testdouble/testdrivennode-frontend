@@ -16,6 +16,8 @@
             <strong>You: </strong><nickname>{{ nickname }}</nickname><br />
             <strong>Opponent: </strong>
             <opponent>{{ opponent }}</opponent><br />
+            <strong>Phase: </strong>
+            <phase>{{ phase }}</phase><br />
           </div>
         </div>
       </div>
