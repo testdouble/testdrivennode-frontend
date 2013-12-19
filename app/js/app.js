@@ -8,3 +8,5 @@ angular.module("app", ["ngResource", "ngRoute"]).run(function($rootScope) {
     alert(thing);
   };
 });
+
+
