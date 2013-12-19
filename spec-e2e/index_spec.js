@@ -24,11 +24,11 @@ describe("Battleship page", function () {
 
   describe("setup phase", function () {
 
-    xit("lets us know we're in setup.", function () {
-      var phase = $('phase');
+    it("lets us know we're in setup.", function () {
+      var phase = $('status');
       phase.getText().
         then(function (textFromPhase) {
-        expect(textFromPhase).toBe("Setup");
+        expect(textFromPhase).toBe("setup");
       });
     });
 
