@@ -15,7 +15,7 @@
             <input id="nickname-field" ng-model="nickname" placeholder="Nickname"/><br />
             <strong>You: </strong><nickname>{{ nickname }}</nickname><br />
             <strong>Opponent: </strong>
-            <opponent>{{ opponent }}</opponent>
+            <opponent>{{ opponent }}</opponent><br />
           </div>
         </div>
       </div>

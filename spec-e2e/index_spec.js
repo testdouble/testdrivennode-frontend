@@ -21,4 +21,18 @@ describe("Battleship page", function () {
       expect($('nickname').getText()).toBe(name);
     })
   });
+
+  describe("setup phase" function () {
+
+    xit("lets us place ships during setup.", function () {
+      var cruiser = $('cruiser');
+      var a1 = $('A1');
+      cruiser.click().
+        then(function () {
+        a1.click();
+      }).then(function () {
+        expect((a1).getText()).toBe('Cr');
+      });
+    });
+  });
 });
