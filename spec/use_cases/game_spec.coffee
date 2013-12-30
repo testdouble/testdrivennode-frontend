@@ -8,7 +8,9 @@ describe "game", ->
     Then -> expect(@game.toJSON()).toMatch(/setup/)
 
   describe "when setup ends", ->
-    Then -> expect(@game.endSetup().status).toBe("inprogress")
+    Given -> @game.endSetup()
+    Then "let the server know", ->
+    Then -> expect(@game.status).toBe("inprogress")
     Then "let the server know", ->
 
   describe "it's our turn after we're shot at", ->

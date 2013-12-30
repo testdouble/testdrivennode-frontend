@@ -4,7 +4,7 @@
   function Game() {
     this.status = "setup";
     this.url =  "/games/:id";
-  };
+  }
 
   Game.prototype.endSetup = function () {
     this.status = "inprogress";

@@ -1,4 +1,4 @@
-window.app = {}
+window.app = {};
 
 angular.module("app", ["ngResource", "ngRoute"]).run(function($rootScope) {
   // adds some basic utilities to the $rootScope for debugging purposes
