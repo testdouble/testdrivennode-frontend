@@ -70,17 +70,19 @@
             </div>
           </div>
 
-          <div class="large-4 columns">
-            <div ng-controller="GameCtrl">
+          <div class="small-4 columns">
+            <div class="row"ng-controller="GameCtrl">
+              <div class="columns small-10 small-centered">
+                <h3>Status</h3>
 
-              <h3>Status</h3>
-
-              <status><strong>{{ status }}</strong></status><br />
-
-              <h3>Ships</h3>
+                <strong>{{ status }}</strong>
+              </div>
+            </div>
 
               <div class="row" ng-controller="shipsCtrl">
                 <div class="columns small-10 small-centered">
+                  <h3>Ships</h3>
+
                   <table class="board">
                     <thead>
                       <th>{{ prompt() }}</th>
