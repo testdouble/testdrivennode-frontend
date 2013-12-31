@@ -50,8 +50,9 @@
 
             <h3>Your Board</h3>
 
-            <div class="row">
+            <div class="row" ng-controller="yourBoardCtrl">
               <div class="columns small-10 small-centered">
+                {{ ship.name }}
                 <table class="board">
                   <thead>
                     <th> </th>
@@ -93,7 +94,7 @@
 
               <h3>Ships</h3>
 
-              <div class="row" ng-controller="ShipsCtrl">
+              <div class="row" ng-controller="shipsCtrl">
                 <div class="columns small-10 small-centered">
                   <table class="board">
                     <thead>
@@ -102,9 +103,9 @@
                       <th></th>
                     </thead>
                     <tbody>
-                      <tr ng-repeat="ship in ships">
+                      <tr ng-click="handleShip(ship)" ng-repeat="ship in ships">
                         <td>{{ ship.name }}</td>
-                        <td class="ship" ng-repeat="point in ship.hull track by $index">{{ point }}</td>
+                        <td class="{{docked(ship)}}" ng-repeat="point in ship.hull track by $index">{{ point }}</td>
                       </tr>
                     </tbody>
                   </table>
