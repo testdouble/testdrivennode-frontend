@@ -4,13 +4,12 @@ angular.module("app").controller("shipsCtrl", function($scope, ships) {
       return ship.location === "docked";
     });
   }
-  $scope.prompt = function () {
 
+  $scope.prompt = function () {
     var transitShips = _(ships).filter(function(ship) {
       return ship.location === "transit";
-    })
+    });
 
-    console.log(transitShips);
     if (transitShips[0]) {
       return "Place " + transitShips[0].name;
     } else if (dockedShips()[0]) {
@@ -19,13 +18,13 @@ angular.module("app").controller("shipsCtrl", function($scope, ships) {
       return "Ready to play.";
     }
   };
+
   $scope.ships = ships;
   $scope.handleShip = function(ship) {
     if (ship.location !== "docked") {
       return;
     }
     ship.location = "transit";
-    console.log(ship.name);
   };
 
   $scope.docked = function(ship) {
