@@ -13,7 +13,7 @@ angular.module("app").factory("yourBoard", function () {
 
   function buildRow(row) {
     return {
-      name: (row).toString(),
+      name: row,
       cells: columns.map(buildCell.bind(undefined, row))
     };
   }

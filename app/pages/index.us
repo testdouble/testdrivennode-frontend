@@ -52,7 +52,6 @@
 
             <div class="row" ng-controller="yourBoardCtrl">
               <div class="columns small-10 small-centered">
-                {{ ship.name }}
                 <table class="board">
                   <thead>
                     <th> </th>
@@ -61,7 +60,9 @@
                   <tbody>
                     <tr ng-repeat="row in yourBoard">
                       <td>{{ row.name }}</td>
-                      <td ng-repeat="cell in row.cells">{{ cell.display }}</td>
+                      <td ng-repeat="cell in row.cells" ng-click="place(cell)" class="{{ hasShip(cell) }}">
+                        {{ cell.display }}
+                      </td>
                     </tr>
                   </tbody>
                 </table>
