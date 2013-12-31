@@ -94,8 +94,8 @@
                     <tbody>
                       <tr>
                         <td>Minesweeper</td>
-                        <td>o</td>
-                        <td>o</td>
+                        <td class="ship">o</td>
+                        <td class="ship">o</td>
                       </tr>
                     </tbody>
                   </table>
