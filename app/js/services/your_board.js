@@ -1,24 +1,22 @@
 angular.module("app").factory("yourBoard", function () {
+  "use strict";
   var columns = "ABC".split("");
-  var rows = _.range(3);
-  function Cell(column, row) {
-    this.display = "o";
-    this.column = column;
-    this.row = row;
+  var rows = _.range(1, 4);
+
+  function buildCell(row, column) {
+    return {
+      display: "o",
+      row: row,
+      column: column,
+    };
   }
 
-  function buildRow(column, row) {
+  function buildRow(row) {
     return {
       name: (row).toString(),
-      cell: new Cell(column, row),
+      cells: columns.map(buildCell.bind(undefined, row))
     };
   }
 
-  function buildColumn(column) {
-    return {
-      name: column,
-      rows: rows.map(buildRow.bind(undefined, column))
-    };
-  }
-  return columns.map(buildColumn);
+  return rows.map(buildRow);
 });

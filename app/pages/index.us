@@ -56,28 +56,12 @@
                 <table class="board">
                   <thead>
                     <th> </th>
-                    <th>A</th>
-                    <th>B</th>
-                    <th>C</th>
+                    <th ng-repeat="cell in yourBoard[0].cells">{{ cell.column }}</th>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td id="YA1">o</td>
-                      <td id="YB1">o</td>
-                      <td id="YC1">o</td>
-                    </tr>
-                    <tr>
-                      <td>2</td>
-                      <td id="YA2">o</td>
-                      <td id="YB2">o</td>
-                      <td id="YC2">o</td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td id="YA3">o</td>
-                      <td id="YB3">o</td>
-                      <td id="YC3">o</td>
+                    <tr ng-repeat="row in yourBoard">
+                      <td>{{ row.name }}</td>
+                      <td ng-repeat="cell in row.cells">{{ cell.display }}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -111,6 +95,7 @@
                   </table>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
