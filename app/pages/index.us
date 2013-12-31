@@ -83,7 +83,7 @@
                 <div class="columns small-10 small-centered">
                   <table class="board">
                     <thead>
-                      <th>{{ tutorial.instructions }}</th>
+                      <th>{{ prompt() }}</th>
                       <th></th>
                       <th></th>
                     </thead>
