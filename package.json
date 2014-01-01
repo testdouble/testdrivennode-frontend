@@ -13,7 +13,8 @@
     "grunt": "~0.4.1",
     "lineman": ">=0.19.2",
     "lineman-angular": ">=0.0.2",
-    "coffee-script": "~1.6.3"
+    "coffee-script": "~1.6.3",
+    "underscore": "~1.5.2"
   },
   "engines": {
     "node": "~>0.10.5",

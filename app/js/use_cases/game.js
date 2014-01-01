@@ -2,19 +2,20 @@
   "use strict";
 
   function Game() {
-    this.status = "setup";
-    this.url =  "/games/:id";
+    this.yourStatus = "setup";
+    this.opponentStatus = "waiting for server";
+    this.foo = "bar";
   }
 
   Game.prototype.endSetup = function () {
-    this.status = "inprogress";
+    this.yourStatus = "inprogress";
     return this;
   };
 
   Game.prototype.toJSON = function () {
     return JSON.stringify({
-      status: this.status,
-      url: this.url,
+      yourStatus: this.yourStatus,
+      opponentStatus: this.opponentStatus,
     });
   };
 
