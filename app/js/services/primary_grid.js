@@ -1,7 +1,6 @@
 angular.module("app").factory("primaryGrid", function () {
   "use strict";
-  var columns = "ABC".split("");
-  var rows = _.range(1, 4);
+  var cells = _.range(3);
 
   function buildCell(row, column) {
     return {
@@ -10,11 +9,8 @@ angular.module("app").factory("primaryGrid", function () {
   }
 
   function buildRow(row) {
-    return {
-      name: row,
-      cells: columns.map(buildCell.bind(undefined, row))
-    };
+    return cells.map(buildCell.bind(undefined, row));
   }
 
-  return rows.map(buildRow);
+  return cells.map(buildRow);
 });
