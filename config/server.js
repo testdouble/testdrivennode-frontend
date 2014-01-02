@@ -16,8 +16,8 @@ var _ = require("underscore");
 module.exports = {
   drawRoutes: function(app) {
     //If a game is already in progress join, otherwise create a new one
-    app.post('/games', function(req, res) {
-      res.json(_({ "id": 1 }).extend(req.body));
-    });
+    // app.post('/games', function(req, res) {
+      // res.json(_({ "id": 1 }).extend(req.body));
+    // });
   }
 };

@@ -1,12 +1,12 @@
 angular.module("app").controller("shipsCtrl", function($scope, ships) {
   function dockedShips() {
-    return _(ships).filter(function(ship) {
+    return ships.filter(function(ship) {
       return ship.location === "docked";
     });
   }
 
   $scope.prompt = function () {
-    var transitShips = _(ships).filter(function(ship) {
+    var transitShips = ships.filter(function(ship) {
       return ship.location === "transit";
     });
 
