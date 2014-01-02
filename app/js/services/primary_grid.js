@@ -1,4 +1,4 @@
-angular.module("app").factory("yourBoard", function () {
+angular.module("app").factory("primaryGrid", function () {
   "use strict";
   var columns = "ABC".split("");
   var rows = _.range(1, 4);

@@ -1,6 +1,6 @@
-angular.module("app").controller("yourBoardCtrl", function($scope, yourBoard, ships) {
-  var lastCell = _(_(yourBoard).last().cells).last();
-  $scope.yourBoard = yourBoard;
+angular.module("app").controller("primaryGridCtrl", function($scope, primaryGrid, ships) {
+  var lastCell = _(_(primaryGrid).last().cells).last();
+  $scope.primaryGrid = primaryGrid;
 
   $scope.hasShip = function (cell) {
     if (cell.ship === undefined) {

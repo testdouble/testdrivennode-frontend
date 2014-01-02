@@ -50,15 +50,15 @@
 
             <h3>Your Board</h3>
 
-            <div class="row" ng-controller="yourBoardCtrl">
+            <div class="row" ng-controller="primaryGridCtrl">
               <div class="columns small-10 small-centered">
                 <table class="board">
                   <thead>
                     <th> </th>
-                    <th ng-repeat="cell in yourBoard[0].cells">{{ cell.column }}</th>
+                    <th ng-repeat="cell in primaryGrid[0].cells">{{ cell.column }}</th>
                   </thead>
                   <tbody>
-                    <tr ng-repeat="row in yourBoard">
+                    <tr ng-repeat="row in primaryGrid">
                       <td>{{ row.name }}</td>
                       <td ng-repeat="cell in row.cells" ng-click="place(cell)" class="{{ hasShip(cell) }}">
                         {{ cell.display }}
