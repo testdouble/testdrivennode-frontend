@@ -1,5 +1,4 @@
 angular.module("app").controller("primaryGridCtrl", function($scope, primaryGrid, ships) {
-  var lastCell = _(_(primaryGrid).last().cells).last();
   $scope.primaryGrid = primaryGrid;
 
   $scope.hasShip = function (cell) {
@@ -21,10 +20,6 @@ angular.module("app").controller("primaryGridCtrl", function($scope, primaryGrid
 
     if (cell.ship !== undefined) {
       return;
-    }
-
-    if ((cell.row + length - 1) > lastCell.row) {
-      return alert("not enough space");
     }
 
     ship.placed++;
