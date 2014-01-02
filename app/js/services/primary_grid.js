@@ -5,9 +5,7 @@ angular.module("app").factory("primaryGrid", function () {
 
   function buildCell(row, column) {
     return {
-      display: "o",
-      row: row,
-      column: column,
+      state: "none",
     };
   }
 

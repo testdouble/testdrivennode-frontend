@@ -61,7 +61,7 @@
                     <tr ng-repeat="row in primaryGrid">
                       <td>{{ row.name }}</td>
                       <td ng-repeat="cell in row.cells" ng-click="place(cell)" class="{{ hasShip(cell) }}">
-                        {{ cell.display }}
+                        {{ cell.state | cellDisplay }}
                       </td>
                     </tr>
                   </tbody>
