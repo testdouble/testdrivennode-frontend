@@ -2,10 +2,10 @@ angular.module("app").controller("primaryGridCtrl", function($scope, primaryGrid
   $scope.primaryGrid = primaryGrid;
 
   $scope.hasShip = function (cell) {
-    if (cell.ship === undefined) {
-      return "";
-    } else {
+    if (cell.ship === "ship") {
       return "ship";
+    } else {
+      return "";
     }
   };
 
@@ -18,14 +18,16 @@ angular.module("app").controller("primaryGridCtrl", function($scope, primaryGrid
       return;
     }
 
-    if (cell.ship !== undefined) {
+    if (cell.ship === "ship") {
       return;
     }
 
     ship.placed++;
+
     if (ship.placed === ship.hull.length) {
       ship.location = "deployed";
     }
-    cell.ship = ship;
+    cell.ship = "ship";
+    return cell;
   };
 });
