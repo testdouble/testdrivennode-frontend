@@ -1,4 +1,4 @@
-angular.module("app").controller("shipsCtrl", function($scope, ships) {
+angular.module("app").controller("shipsCtrl", function($scope, ships, game) {
   function dockedShips() {
     return ships.filter(function(ship) {
       return ship.location === "docked";

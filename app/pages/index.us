@@ -75,11 +75,8 @@
               <div class="columns small-10 small-centered">
                 <h3>Status</h3>
 
-                <strong>You:</strong> {{ game.yourStatus }}<br />
-                <strong>Opponent:</strong> {{ game.opponentStatus }}<br />
-                <button class="small button {{ disabled() }}">
-                  Continue
-                </button>
+                <strong> {{ game.status }}</strong><br />
+                <strong>Prompt: </strong>
               </div>
             </div>
 
