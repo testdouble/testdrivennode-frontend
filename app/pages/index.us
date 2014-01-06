@@ -6,52 +6,41 @@
   </head>
   <body>
     <div class="row">
-      <div class="large-12">
+      <div class="small-12">
 
         <h1>Battleship</h1>
 
         <div class="row">
-          <div class="large-8 columns">
+          <div class="small-8 columns">
 
-            <h4>Opponent's Board</h4>
-
-            <div class="row">
+            <div class="row" ng-controller="trackingGridCtrl" ng-show="game.trackingGrid">
               <div class="columns small-10 small-centered">
+                <h4>Tracking Grid</h4>
+
                 <table class="board">
                   <thead>
                     <th> </th>
-                    <th>A</th>
-                    <th>B</th>
-                    <th>C</th>
+                    <th ng-repeat="cell in game.trackingGrid[0] track by $index">{{ $index | columnHeader }}</th>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td id="OA1">o</td>
-                      <td id="OB1">o</td>
-                      <td id="OC1">o</td>
-                    </tr>
-                    <tr>
-                      <td>2</td>
-                      <td id="OA2">o</td>
-                      <td id="OB2">o</td>
-                      <td id="OC2">o</td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td id="OA3">o</td>
-                      <td id="OB3">o</td>
-                      <td id="OC3">o</td>
+                    <tr ng-repeat="row in game.trackingGrid track by $index">
+                      <td><strong>{{ $index + 1 }}</strong></td>
+                      <td ng-repeat="cell in row" ng-click="place(cell)" class="{{ cell.ship }}">
+                        {{ cell.state | cellDisplay }}
+                      </td>
                     </tr>
                   </tbody>
                 </table>
+
               </div>
             </div>
 
-            <h4>Your Board</h4>
 
             <div class="row" ng-controller="primaryGridCtrl">
               <div class="columns small-10 small-centered">
+
+                <h4>Primary Grid</h4>
+
                 <table class="board">
                   <thead>
                     <th> </th>
@@ -66,6 +55,7 @@
                     </tr>
                   </tbody>
                 </table>
+
               </div>
             </div>
           </div>

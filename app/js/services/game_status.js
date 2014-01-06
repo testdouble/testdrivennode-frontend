@@ -38,7 +38,7 @@ angular.module("app").factory("gameStatus", function (game, ships) {
     },
 
     start: function() {
-      game.$update()
+      game.$update();
     },
 
     prompt: function() {
