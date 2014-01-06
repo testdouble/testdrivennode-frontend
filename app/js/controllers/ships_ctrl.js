@@ -1,23 +1,4 @@
 angular.module("app").controller("shipsCtrl", function($scope, ships, game) {
-  function dockedShips() {
-    return ships.filter(function(ship) {
-      return ship.location === "docked";
-    });
-  }
-
-  $scope.prompt = function () {
-    var transitShips = ships.filter(function(ship) {
-      return ship.location === "transit";
-    });
-
-    if (transitShips[0]) {
-      return "Place " + transitShips[0].name;
-    } else if (dockedShips()[0]) {
-      return "Select Ship";
-    } else {
-      return "Ready to play.";
-    }
-  };
 
   $scope.ships = ships;
   $scope.handleShip = function(ship) {

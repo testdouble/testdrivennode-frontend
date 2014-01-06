@@ -1,14 +1,6 @@
 angular.module("app").controller("primaryGridCtrl", function($scope, primaryGrid, ships) {
   $scope.primaryGrid = primaryGrid;
 
-  $scope.hasShip = function (cell) {
-    if (cell.ship === "ship") {
-      return "ship";
-    } else {
-      return "";
-    }
-  };
-
   $scope.place = function (cell) {
     var ship = _(ships).find(function(ship) {
       return ship.location === "transit";

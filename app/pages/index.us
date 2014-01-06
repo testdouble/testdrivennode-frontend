@@ -60,7 +60,7 @@
                   <tbody>
                     <tr ng-repeat="row in primaryGrid track by $index">
                       <td><strong>{{ $index + 1 }}</strong></td>
-                      <td ng-repeat="cell in row" ng-click="place(cell)" class="{{ hasShip(cell) }}">
+                      <td ng-repeat="cell in row" ng-click="place(cell)" class="{{ cell.ship }}">
                         {{ cell.state | cellDisplay }}
                       </td>
                     </tr>
@@ -76,9 +76,9 @@
                 <div class="panel radius">
                   <h4>Status</h4>
 
-                  <strong> {{ game.status }}</strong><br />
-                  <strong> {{ game.turn }}</strong><br />
-                  <strong>Prompt: </strong>
+                  <strong>Game: </strong>{{ game.status }}<br />
+                  <strong>Turn: </strong>{{ game.turn }}<br />
+                  <strong>Prompt: </strong> {{ gameStatus.prompt() }}
                 </div>
               </div>
             </div>
@@ -89,7 +89,7 @@
 
                   <table class="board">
                     <thead>
-                      <th>{{ prompt() }}</th>
+                      <th></th>
                       <th></th>
                       <th></th>
                     </thead>
@@ -104,10 +104,10 @@
                 </div>
               </div>
 
-              <div class="row" ng-controller="startCtrl" ng-show="gameStatus.readyToPlay()">
+              <div class="row" ng-controller="startCtrl" ng-show="gameStatus.isReady()">
                 <div class="columns small-10 small-centered">
                   <br />
-                  <button class="start-btn">Start</button>
+                  <button class="start-btn" ng-click="gameStatus.start()">Start</button>
                 </div>
               </div>
 
