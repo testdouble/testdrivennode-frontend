@@ -6,7 +6,7 @@
   </head>
   <body>
     <div class="row">
-      <div class="small-12">
+      <div class="small-12 columns">
 
         <h1>Battleship</h1>
 
@@ -25,7 +25,7 @@
                   <tbody>
                     <tr ng-repeat="row in game.trackingGrid track by $index">
                       <td><strong>{{ $index + 1 }}</strong></td>
-                      <td ng-repeat="cell in row" ng-click="place(cell)" class="{{ cell.ship }}">
+                      <td ng-repeat="cell in row" ng-click="fire(cell)" class="{{ cell.ship }}">
                         {{ cell.state | cellDisplay }}
                       </td>
                     </tr>
