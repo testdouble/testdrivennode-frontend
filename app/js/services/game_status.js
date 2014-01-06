@@ -28,8 +28,14 @@ angular.module("app").factory("gameStatus", function (game, ships) {
     if (game.turn === "yours") {
       return "Fire when ready.";
     } else {
-      return "Waiting for opponent."
+      return "Waiting for opponent.";
     }
+  }
+
+  function startPolling() {
+    setInterval(function() {
+      game.$get();
+    }, 1000);
   }
 
   return {
@@ -38,7 +44,9 @@ angular.module("app").factory("gameStatus", function (game, ships) {
     },
 
     start: function() {
-      game.$update();
+      game.$update().then(function() {
+        startPolling()
+      });
     },
 
     prompt: function() {

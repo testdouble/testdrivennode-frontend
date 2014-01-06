@@ -3,7 +3,7 @@ angular.module("app").filter("cellDisplay", function() {
     if (state === "none") {
       return "o";
     } else {
-      throw "unknown cell state";
+      return "x";
     }
   };
 });

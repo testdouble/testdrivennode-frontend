@@ -20,7 +20,7 @@ angular.module("app").controller("trackingGridCtrl", function ($scope, game, Sho
           shot.y = y;
           shot.$save().then(function() {
             console.log(shot);
-          })
+          });
         }
       });
     });
