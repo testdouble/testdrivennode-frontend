@@ -1,5 +1,5 @@
-angular.module("app").controller("primaryGridCtrl", function($scope, primaryGrid, ships) {
-  $scope.primaryGrid = primaryGrid;
+angular.module("app").controller("primaryGridCtrl", function($scope, game, ships) {
+  $scope.game = game;
 
   $scope.place = function (cell) {
     var ship = _(ships).find(function(ship) {

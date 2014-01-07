@@ -13,8 +13,8 @@ angular.module("app").controller("trackingGridCtrl", function ($scope, game, Sho
     cell._fired = true;
     var shot = new ShotsResource({game_id: game.id});
 
-    game.trackingGrid.forEach(function(row, y) {
-      row.forEach(function(c, x) {
+    game.trackingGrid.forEach(function(row, x) {
+      row.forEach(function(c, y) {
         if (c._fired) {
           shot.x = x;
           shot.y = y;

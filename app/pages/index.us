@@ -25,7 +25,7 @@
                   <tbody>
                     <tr ng-repeat="row in game.trackingGrid track by $index">
                       <td><strong>{{ $index + 1 }}</strong></td>
-                      <td ng-repeat="cell in row" ng-click="fire(cell)" class="{{ cell | cellClass }}">
+                      <td ng-repeat="cell in row" ng-click="fire(cell)" class="{{ cell.state }}">
                         {{ cell.state | cellDisplay }}
                       </td>
                     </tr>
@@ -44,10 +44,10 @@
                 <table class="board">
                   <thead>
                     <th> </th>
-                    <th ng-repeat="cell in primaryGrid[0] track by $index">{{ $index | columnHeader }}</th>
+                    <th ng-repeat="cell in game.primaryGrid[0] track by $index">{{ $index | columnHeader }}</th>
                   </thead>
                   <tbody>
-                    <tr ng-repeat="row in primaryGrid track by $index">
+                    <tr ng-repeat="row in game.primaryGrid track by $index">
                       <td><strong>{{ $index + 1 }}</strong></td>
                       <td ng-repeat="cell in row" ng-click="place(cell)" class="{{ cell | cellClass }}">
                         {{ cell.state | cellDisplay }}
