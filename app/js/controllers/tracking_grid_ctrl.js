@@ -18,8 +18,8 @@ angular.module("app").controller("trackingGridCtrl", function ($scope, game, Sho
         if (c._fired) {
           shot.x = x;
           shot.y = y;
+          game.turn = "opponents";
           shot.$save().then(function() {
-            console.log(shot);
           });
         }
       });

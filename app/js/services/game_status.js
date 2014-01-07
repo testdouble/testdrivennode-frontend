@@ -34,7 +34,9 @@ angular.module("app").factory("gameStatus", function (game, ships) {
 
   function startPolling() {
     setInterval(function() {
-      game.$get();
+      if (game.turn !== "yours") {
+        game.$get();
+      }
     }, 1000);
   }
 
@@ -45,7 +47,7 @@ angular.module("app").factory("gameStatus", function (game, ships) {
 
     start: function() {
       game.$update().then(function() {
-        startPolling()
+        startPolling();
       });
     },
 
