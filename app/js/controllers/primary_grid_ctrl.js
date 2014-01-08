@@ -25,7 +25,7 @@ angular.module("app").controller("primaryGridCtrl", function($scope, game, ships
             y: y,
             orientation: "horizontal"
           }).$save().then(function(data) {
-            console.log(data);
+            game.$get();
           });
         }
       });
