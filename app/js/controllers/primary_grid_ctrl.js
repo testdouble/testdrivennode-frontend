@@ -25,16 +25,14 @@ angular.module("app").controller("primaryGridCtrl", function($scope, game, ships
             y: y,
             orientation: "horizontal"
           }).$save().then(function(data) {
-            game.$get();
+            game.$get().then(function(data) {
+              ship.location = "deployed";
+            });
           });
         }
       });
     });
-    ship.placed++;
 
-    if (ship.placed === ship.hull.length) {
-      ship.location = "deployed";
-    }
     cell.ship = "ship";
     return cell;
   };
