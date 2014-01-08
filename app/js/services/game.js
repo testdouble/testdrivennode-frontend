@@ -1,7 +1,5 @@
-angular.module("app").factory("game", function (GameResource, primaryGrid) {
+angular.module("app").factory("game", function (GameResource) {
   var gameResource = new GameResource();
-  gameResource.$save().then(function(data) {
-    gameResource.primaryGrid = primaryGrid;
-  });
+  gameResource.$save();
   return gameResource;
 });
