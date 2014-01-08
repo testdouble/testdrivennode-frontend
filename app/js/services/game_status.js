@@ -25,16 +25,16 @@ angular.module("app").factory("gameStatus", function (game, ships) {
   }
 
   function inprogressPrompt() {
-    if (game.turn === "yours") {
-      return "Fire when ready.";
-    } else {
+    if (game.turn === "opponent") {
       return "Waiting for opponent.";
+    } else {
+      return "Fire when ready.";
     }
   }
 
   function startPolling() {
     setInterval(function() {
-      if (game.turn !== "yours") {
+      if (game.turn === "opponents") {
         game.$get();
       }
     }, 1000);
@@ -46,9 +46,7 @@ angular.module("app").factory("gameStatus", function (game, ships) {
     },
 
     start: function() {
-      game.$update().then(function() {
-        startPolling();
-      });
+      startPolling();
     },
 
     prompt: function() {

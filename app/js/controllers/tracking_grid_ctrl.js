@@ -2,10 +2,6 @@ angular.module("app").controller("trackingGridCtrl", function ($scope, game, Sho
   $scope.game = game;
 
   $scope.fire = function (cell) {
-    if (game.turn !== "yours") {
-      return;
-    }
-
     if (cell.state !== "none") {
       return;
     }
@@ -20,6 +16,7 @@ angular.module("app").controller("trackingGridCtrl", function ($scope, game, Sho
           shot.y = y;
           game.turn = "opponents";
           shot.$save().then(function() {
+            game.$get();
           });
         }
       });
