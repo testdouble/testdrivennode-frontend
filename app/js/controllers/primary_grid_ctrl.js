@@ -1,4 +1,4 @@
-angular.module("app").controller("primaryGridCtrl", function($scope, game, ships) {
+angular.module("app").controller("primaryGridCtrl", function($scope, game, ships, ShipsResource) {
   $scope.game = game;
 
   $scope.place = function (cell) {
@@ -14,6 +14,22 @@ angular.module("app").controller("primaryGridCtrl", function($scope, game, ships
       return;
     }
 
+    cell._placed = true;
+
+    game.primaryGrid.forEach(function(row, x) {
+      row.forEach(function(c, y) {
+        if (c._placed) {
+          new ShipsResource({
+            gameId: game.id,
+            x: x,
+            y: y,
+            orientation: "horizontal"
+          }).$save().then(function(data) {
+            console.log(data);
+          });
+        }
+      });
+    });
     ship.placed++;
 
     if (ship.placed === ship.hull.length) {
