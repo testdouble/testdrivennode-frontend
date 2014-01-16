@@ -1,8 +1,9 @@
-# A Lineman JS Template using Angular
+# Battleship - frontend
 
-[![Build Status](https://travis-ci.org/testdouble/lineman-angular-template.png?branch=master)](https://travis-ci.org/testdouble/lineman-angular-template)
+Frontend component for Test Driven Node CodeMash 2014. The backend piece is found [here](https://github.com/testdouble/testdrivennode).
 
-This is a project template for Angular JS applications using [Lineman](http://www.linemanjs.com).
+
+This was built from the project template for Angular JS applications using [Lineman](http://www.linemanjs.com).
 
 It includes the following features:
 
@@ -19,7 +20,7 @@ It includes the following features:
 
 # Instructions
 
-1. `git clone https://github.com/davemo/lineman-angular-template.git my-lineman-app`
+1. `git clone https://github.com/testdouble/testdrivennode-frontend`
 2. `cd my-lineman-app`
 3. `sudo npm install -g lineman`
 4. `npm install`
